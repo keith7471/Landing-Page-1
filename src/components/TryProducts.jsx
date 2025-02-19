@@ -35,16 +35,16 @@ const TryProducts = () => {
                                 <motion.div
                                     key={index}
                                     className="bg-gray-700 p-6 rounded-xl shadow-lg flex flex-col"
-                                    initial={{ opacity: 0, y: 100 }}
+                                    initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }} // Animates when in viewport
                                     transition={{ duration: 1, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                                     viewport={{ once: false, amount: 0.2 }} // Staggered animation
                                 >
-                                    <div>
+                                    
                                         <h3 className='text-gray-300 font-semibold'>{step.title}</h3>
                                         <p className='text-gray-300 mt-2 font-light text-sm'>{step.description}</p>
                                         <img src={step.imageSrc} className='mt-4 rounded-lg ' alt="" />
-                                    </div>
+                                    
 
                                 </motion.div>
                             ))
