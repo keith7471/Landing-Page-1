@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
 import { motion } from 'framer-motion';
-import PricingPlans from './components/PricingPlans';
-import TryProducts from './components/TryProducts';
-import Footer from './components/Footer';
-import FrequentlyAskedQues from './components/FrequentlyAskedQues';
+import { Suspense } from 'react';
+import { lazy } from 'react';
 
+const Navbar = lazy(() => import('./components/Navbar'));
+const HeroSection = lazy(() => import('./components/HeroSection'));
+const PricingPlans = lazy(() => import('./components/PricingPlans'));
+const TryProducts = lazy(() => import('./components/TryProducts'));
+const Footer = lazy(() => import('./components/Footer'));
+const FrequentlyAskedQues = lazy(() => import('./components/FrequentlyAskedQues'));
 
 function App() {
   return (
@@ -22,15 +24,18 @@ function App() {
       </video>
 
       {/* Content */}
-      <Navbar />
-      <HeroSection />
+      <Suspense fallback={<div className='text-center text-white'>Loading....</div>}>
+        <Navbar />
+        <HeroSection />
 
-      <TryProducts />
-      
-      {/* <Features /> */}
-      <PricingPlans />
-      <FrequentlyAskedQues />
-      <Footer />
+        <TryProducts />
+
+        {/* <Features /> */}
+        <PricingPlans />
+        <FrequentlyAskedQues />
+        <Footer />
+
+      </Suspense>
 
     </div>
   );
