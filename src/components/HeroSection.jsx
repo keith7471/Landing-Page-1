@@ -9,7 +9,7 @@ const HeroSection = () => {
       <div className="flex flex-col items-center">
         {/* Badge Text */}
         <motion.div
-          className="mt-6 text-white"
+          className="mt-20 text-white"
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 10 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -93,13 +93,13 @@ const HeroSection = () => {
 
         {/* Hero Image */}
         <motion.div
-          className="mt-12"
+          className="mt-20 px-30"
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 1 }}
           viewport={{ once: false }}
         >
-          <img src={heroImage} alt="Hero" className="w-full px-4 h-auto rounded-3xl" />
+          <img src={'https://img.freepik.com/free-vector/ai-technology-microchip-background-vector-digital-transformation-concept_53876-117808.jpg?semt=ais_hybrid'} alt="Hero" className="w-screen h-150 rounded-3xl" />
         </motion.div>
       </div>
     </div>

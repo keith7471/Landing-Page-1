@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <footer className="mt-10 text-gray-300">
-      <div className="border-t border-gray-600 px-6 ">
+      <div className="border-t border-gray-600 px-6">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-4 text-center"
           initial={{ opacity: 0, y: 50 }}
@@ -16,7 +16,7 @@ const Footer = () => {
           {FOOTER_CONTENT.sections.map((section, index) => (
             <motion.div
               key={index}
-              className="sm:mt-12"
+              className="mt-6"
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: index * 0.2, ease: [0.25, 0.1, 0.25, 1] }}

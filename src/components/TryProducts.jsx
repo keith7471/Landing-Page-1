@@ -19,6 +19,8 @@ const TryProducts = () => {
                     <h2 className='text-white font-bold text-3xl'>How It Works</h2>
                 </div>
 
+
+{/* Skeleton Loading */}
                 <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {
                         loading ? HOW_IT_WORKS_CONTENT.steps.map((_, index) => (

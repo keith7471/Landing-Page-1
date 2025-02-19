@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion';
 import { Suspense } from 'react';
 import { lazy } from 'react';
+import { ClipLoader } from 'react-spinners';
+
 
 const Navbar = lazy(() => import('./components/Navbar'));
 const HeroSection = lazy(() => import('./components/HeroSection'));
@@ -10,9 +12,17 @@ const TryProducts = lazy(() => import('./components/TryProducts'));
 const Footer = lazy(() => import('./components/Footer'));
 const FrequentlyAskedQues = lazy(() => import('./components/FrequentlyAskedQues'));
 
+const LoadingScreen = () => {
+  return (
+    <div className="flex justify-center items-center h-screen bg-black">
+      <ClipLoader size={50} color="white" />
+    </div>
+  );
+};
+
 function App() {
   return (
-    <div className="relative pt-16">
+    <div className="relative ">
       {/* Video Background */}
       <video
         autoPlay
@@ -24,7 +34,7 @@ function App() {
       </video>
 
       {/* Content */}
-      <Suspense fallback={<div className='text-center text-white'>Loading....</div>}>
+      <Suspense fallback={<LoadingScreen />}>
         <Navbar />
         <HeroSection />
 
